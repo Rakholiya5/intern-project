@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="av.css">
+    <title>Reserve</title>
+</head>
+<body>
+    <section class="reserve" id="reserve">
+        <div class="title">
+            <h2><span>R</span>egister</h2>
+            <p>Book your Table here with ease and comfort.</p>
+        </div>
+        <div class="forms">
+            <div class="sign">
+                <div class="un">
+                    <img src="unreserved.png" alt=""> <p>Unreserved</p>
+                </div>
+                <div class="re">
+                    <img src="reserved.png" alt=""> <p>Reserved</p>
+                </div>
+            </div>
+            <div class="table">
+                <img id="t1" onclick="changeImage1()" src="pic_bulboff.png" alt=""> 
+                <img id="t2" onclick="changeImage2()" src="pic_bulboff.png" alt="">
+                <img id="t3" onclick="changeImage3()" src="pic_bulboff.png" alt="">
+                <br>
+                <img id="t4" onclick="changeImage4()" src="pic_bulboff.png" alt="">
+                <img id="t5" onclick="changeImage5()" src="pic_bulboff.png" alt="">
+                <img id="t6" onclick="changeImage6()" src="pic_bulboff.png" alt="">
+                <br>
+                <img id="t7" onclick="changeImage7()" src="pic_bulboff.png" alt="">
+                <img id="t8" onclick="changeImage8()" src="pic_bulboff.png" alt="">
+                <img id="t9" onclick="changeImage9()" src="pic_bulboff.png" alt="">
+                <br>
+                <img id="t10" onclick="changeImage10()" src="pic_bulboff.png" alt="">
+                <img id="t11" onclick="changeImage11()" src="pic_bulboff.png" alt="">
+                <img id="t12" onclick="changeImage12()" src="pic_bulboff.png" alt="">
+            </div>
+            <script>
+                function changeImage1() {
+                    var image = document.getElementById('t1');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage2() {
+                    var image = document.getElementById('t2');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage3() {
+                    var image = document.getElementById('t3');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage4() {
+                    var image = document.getElementById('t4');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage5() {
+                    var image = document.getElementById('t5');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage6() {
+                    var image = document.getElementById('t6');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage7() {
+                    var image = document.getElementById('t7');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage8() {
+                    var image = document.getElementById('t8');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage9() {
+                    var image = document.getElementById('t9');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage10() {
+                    var image = document.getElementById('t10');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage11() {
+                    var image = document.getElementById('t11');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                function changeImage12() {
+                    var image = document.getElementById('t12');
+                    if (image.src.match("pic_bulbon.png")) {
+                        image.src = "pic_bulboff.png";
+                    } else {
+                        image.src = "pic_bulbon.png";
+                    }
+                }
+                </script>
+            <div class="reserveForm">
+                <h3>Personal info</h3>
+                <div class="inputBox">
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="inputBox">
+                    <label for="person">Select Members:</label>
+                        <select name="person" id="person">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Email">
+                </div>
+                <div class="inputBox">
+                    <input type="number" placeholder="Mobile">
+                </div>
+                <div class="inputBox">
+                    <textarea cols="" rows="" placeholder="Suggestion"></textarea>
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </div>
+   </section>
+</body>
+</html>

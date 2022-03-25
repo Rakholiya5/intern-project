@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/fontawesome.min.css" integrity="sha512-KVdV5HNnN1f6YOANbRuNxyCnqyPICKUmQusEkyeRg4X0p8K1xCdbHs32aA7pWo6WqMZk0wAzl29cItZh8oBPYQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/brands.min.css" integrity="sha512-BglNUJaVmT9HacZ2AsbVQxjswBmIf3AJj9hhXr/Yre33qU+A1p8gXUcavzcHYkWf5bIvLMIiEbdMrEVqb5h2Rg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Home</title>
+    </head>
+    <body>
+       <header>
+              <a href="#" class="logo">Food<span>.</span></a>
+              <div class="menuToggle" onclick="toggleMenu();"></div>
+              <ul class="navigation">
+                  <li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+                  <li><a href="#reserve" onclick="toggleMenu();">Reserve</a></li>
+                  <li><a href="#about" onclick="toggleMenu();">About</a></li>
+                  <li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
+                  <li><a href="#expert" onclick="toggleMenu();">Expert</a></li>
+                  <li><a href="#testimonials" onclick="toggleMenu();">Testimonials</a></li>
+                  <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+              </ul>
+       </header>
+
+       <section class="banner" id="banner">
+           <div class="content">
+               <h2>Always Choose Good</h2>
+               <p>There are advantages to being a star though – you can always get a table in a full restaurant.</p>
+               <br>
+               <p>I haven’t seen a better business than the restaurant business. You earn through fulfilling people’s appetites, needs, and dreams.</p>
+               <a href="#menu" class="btn">OUR MENU</a>
+           </div>
+       </section>
+
+       <% var tableList%>
+                        <% var c=0%>
+                        <% tableList?.forEach(tables => { %>
+                          <% c=c+1 %>
+                        <% }); %>
+                        <p><%= c %></p>
+                        
+                        <% if(c<12){ %>
+       <section class="reserve" id="reserve">
+            <div class="title">
+                <h2><span>R</span>egister</h2>
+                <p>Book your Table here with ease and comfort.</p>
+            </div>
+            <form action="/booked" method="POST">
+               <div class="forms">
+                    <div class="reserveForm">
+                        <h3>Personal info</h3>    
+                        <div class="inputBox">
+                            <label for="select table">Select Table No</label>
+                            <select type="text" placeholder="Table" name="table" class="custom-select">
+                                <option value="select">select</option>
+                                
+                                <% for(i=1;i<=12;i++){%>
+                                    <% var found=false %>
+                                    <% tableList?.forEach(tables => { %>
+                                        <% if(tables.table==i){ %>
+                                          <% found=true %>
+                                        <% } %>    
+                                    <% }); %>
+                                    <% if(!found) {%>
+                                        <option value="<%= i %>"><%= i %></option>
+                                    <% } %>    
+                                <% } %>          
+                            </select>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" placeholder="Name" name="name">
+                        </div>
+                        <div class="inputBox">
+                            <input type="number" placeholder="Member" name="member">
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" placeholder="Email" name="email">
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" placeholder="Mobile" name="mobile">
+                        </div>
+                        <div class="inputBox">
+                            <textarea cols="" rows="" placeholder="Suggestion" name="suggestion"></textarea>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Submit" name="submit">
+                        </div>    
+                    </div>
+                </div>
+            </form>
+       </section>
+
+       <% } else { %>
+        <section class="reserve" id="reserve">
+            <div class="title">
+                <h2><span>R</span>egister</h2>
+                <p>Book your Table to stay in Queue.</p>
+            </div>
+            <form action="/notified" method="POST">
+               <div class="forms">
+                    <div class="reserveForm">
+                        <h3><b><i>Sorry!</i></b> Currently We don't have enough space.</h3>
+                        <h3>Fill This to get Notified when Available.</h3>
+                        <div class="inputBox">
+                            <input type="text" placeholder="Name" name="name">
+                        </div>
+                        <div class="inputBox">
+                            <input type="number" placeholder="Member" name="member">
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" placeholder="Email" name="email">
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" placeholder="Mobile" name="mobile">
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Submit" name="submit">
+                        </div>    
+                    </div>
+                </div>
+            </form>
+       </section>
+    <% } %>
+
+       <section class="about" id="about">
+           <div class="row">
+               <div class="col50">
+                   <h2><span>A</span>bout Us    
+                    </h2>
+                   <p>A forerunner of the modern restaurant is the thermopolium, an establishment in Ancient Greece and Ancient Rome that sold and served ready-to-eat food and beverages. These establishments were somewhat comparable to modern fast food restaurants. They were most often frequented by people who lacked private kitchens. In the Roman Empire they were popular among residents of insulae.</p>
+                   <br>
+                   <p>In Pompeii, 158 thermopolia with service counters have been identified throughout the town. They were concentrated along the main axis of the town and the public spaces where they were frequented by the locals.</p>   
+               </div>
+               <div class="col50">
+                   <div class="imgBx">
+                    <img src="img1.jpg" alt="">   
+                   </div>    
+               </div>
+           </div>
+       </section>
+
+       <section class="menu" id="menu">
+           <div class="title">
+               <h2>Our <span>M</span>enu</h2>
+               <p>You can order delicious delicacy from here.</p>
+           </div>
+
+           <div class="content">
+               <div class="box">
+                    <div class="imgBx">
+                        <img src="menu1.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Special Salads</h3>
+                    </div>
+               </div>
+
+               <div class="box">
+                    <div class="imgBx">
+                        <img src="menu2.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Special Soup</h3>
+                    </div>
+               </div>
+
+               <div class="box">
+                    <div class="imgBx">
+                        <img src="menu3.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Special Pasta</h3>
+                    </div>
+               </div>
+
+               <div class="box">
+                    <div class="imgBx">
+                        <img src="menu4.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Special Salads</h3>
+                    </div>
+               </div>
+
+               <div class="box">
+                    <div class="imgBx">
+                        <img src="menu5.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Special Soup</h3>
+                    </div>
+               </div>
+
+               <div class="box">
+                    <div class="imgBx">
+                        <img src="menu6.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Special Greenie</h3>
+                    </div>
+               </div>
+           </div>
+
+           <div class="title">
+               <a href="#" class="btn">View All</a>
+           </div>
+       </section>
+
+       <section class="expert" id="expert">
+           <div class="title">
+               <h2>Our Kitchen <span>E</span>xpert</h2>
+               <p>They are Excel in cooking industry and can able to make every delicay of world.</p>
+           </div>
+           <div class="content">
+               <div class="box">
+                   <div class="imgBx">
+                      <img src="expert1.jpg" alt="">   
+                   </div>
+                   <div class="text">
+                      <h3>Martin Yan</h3>
+                   </div>
+               </div>
+               
+               <div class="box">
+                   <div class="imgBx">
+                      <img src="expert2.jpg" alt="">   
+                   </div>
+                   <div class="text">
+                      <h3>Jose Garces</h3>
+                   </div>
+               </div>
+
+               <div class="box">
+                   <div class="imgBx">
+                      <img src="expert3.jpg" alt="">   
+                   </div>
+                   <div class="text">
+                      <h3>Enrique Olvera</h3>
+                   </div>
+               </div>
+
+               <div class="box">
+                   <div class="imgBx">
+                      <img src="expert4.jpg" alt="">   
+                   </div>
+                   <div class="text">
+                      <h3>Gabriela camara</h3>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <section class="testimonials" id="testimonials">
+            <div class="title">
+                <h2>They <span>S</span>aid About Us</h2>
+                <p>Some good thoughts about our restaurant.</p>
+            </div>
+
+            <div class="content">
+               <div class="box">
+                   <div class="imgBx">
+                       <img src="testi1.jpg" alt="">
+                   </div>
+                   <div class="text">
+                       <p>The food was excellent and so was the service.  I had the mushroom risotto with scallops which was awesome. My wife had a burger over greens (gluten-free) which was also very good. They were very conscientious about gluten allergies. The restaurant has a vey nice ambiance and a cozy bar.</p>
+                       <h3>Amelia Olivia</h3>
+                   </div>
+               </div>
+
+               <div class="box">
+                   <div class="imgBx">
+                       <img src="testi2.jpg" alt="">
+                   </div>
+                   <div class="text">
+                       <p>Walked in for dinner in a Wednesday night and sat at the bar. The bartender, Erin, couldn’t have been nicer. She was quick, efficient and friendly. She helped recommend something for my dinner and the Lobster Florentine didn’t disappoint! I even returned the next morning for breakfast and got similar service!</p>
+                       <h3>John Trippy</h3>
+                   </div>
+               </div>
+
+               <div class="box">
+                   <div class="imgBx">
+                       <img src="testi3.jpg" alt="">
+                   </div>
+                   <div class="text">
+                       <p>If we are lucky, we go for dinner one day and breakfast another. The dinner menu is varied enough for a family like mine that has only one seafood eater. The pasta and pizza are delicious! The breakfast menu is equally varied. I could have ordered at least 6 items on the menu. The service is great, prices are reasonable.</p>
+                       <h3>Isla Ava</h3>
+                   </div>
+               </div>
+            </div>
+       </section>
+
+       <section class="contact" id="contact">
+            <div class="title">
+                <h2><span>C</span>ontact Us</h2>
+                <p>Dipkumar Rakholiya</p>
+                <p>(+91) 8866340851</p>
+                <p>Deeprakholiya55@gmail.com</p>
+            </div>
+            <div class="contactForm">
+                <div class="inputBox"> 
+                    <a href="https://www.facebook.com/" target="blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com" target="blank">
+                        <i class="fa-brands fa-youtube"></i>   
+                    </a>
+                    <a href="https://www.twitter.com" target="blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="blank">
+                        <i class="fa-brands fa-linkedin"></i>   
+                    </a>
+                </div>
+            </div>
+            <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.679482782984!2d72.83889271411486!3d21.20488788711999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04ef9dc913593%3A0x96106052132786c3!2sSurat!5e0!3m2!1sen!2sin!4v1647497828796!5m2!1sen!2sin" width="80%" height="370" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+       </section>    
+
+       <div class="copyrightText">
+           <p>Copyright 2022 <a href="#">Dip Rakholiya.</a> All right Reserved</p>
+       </div>  
+
+       <script>
+           window.addEventListener("scroll",function(){
+                const header=document.querySelector('header');
+                header.classList.toggle("sticky",window.scrollY>0);
+           });
+
+           function toggleMenu(){
+               const menuToggle=document.querySelector('.menuToggle');
+               const navigation=document.querySelector('.navigation');
+               menuToggle.classList.toggle('active');
+               navigation.classList.toggle('active');
+           } 
+       </script>
+    </body>
+</html>
